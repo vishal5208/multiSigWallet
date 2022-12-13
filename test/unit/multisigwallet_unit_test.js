@@ -57,7 +57,7 @@ const DATA = "0x"
                   // expected event : OwnerAdded
                   await expect(tx).to.emit(multiSigWallet, "OwnerAdded")
 
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[0].args.owner, user.address)
 
                   // check minimum legal
@@ -87,7 +87,7 @@ const DATA = "0x"
                   // expected event : OwnerRemoval
                   await expect(tx).to.emit(multiSigWallet, "OwnerRemoval")
 
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[0].args.owner, user.address)
 
                   // check minimum legal
@@ -113,12 +113,12 @@ const DATA = "0x"
 
                   // expected event : OwnerRemoval
                   await expect(tx).to.emit(multiSigWallet, "OwnerRemoval")
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[0].args.owner, owners[0].address)
 
                   // expected event : OwnerAdded
                   await expect(tx).to.emit(multiSigWallet, "OwnerAdded")
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[1].args.owner, user.address)
               })
           })
@@ -150,7 +150,7 @@ const DATA = "0x"
                   await expect(tx).to.emit(owner1ConnectedContract, "SubmitTransaction")
                   const txRec = await tx.wait(1)
 
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[0].args.owner, owners[0].address)
                   assert.equal(txRec.events[0].args.txIndex.toString(), "0")
                   assert.equal(txRec.events[0].args.to, user.address)
@@ -207,7 +207,7 @@ const DATA = "0x"
                   await expect(confirmTx).to.emit(owner1ConnectedContract, "ConfirmTransaction")
                   const txRec = await confirmTx.wait(1)
 
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[0].args.owner, owners[0].address)
                   assert.equal(txRec.events[0].args.txIndex.toString(), "0")
               })
@@ -258,7 +258,7 @@ const DATA = "0x"
                   // expected event : RevokeConfirmation
                   await expect(revokeTx).to.emit(owner1ConnectedContract, "RevokeConfirmation")
 
-                  // Events emits following
+                  // Events emit following
                   assert.equal(txRec.events[0].args.owner, owners[0].address)
                   assert.equal(txRec.events[0].args.txIndex.toString(), "0")
               })
@@ -334,7 +334,7 @@ const DATA = "0x"
                   //  expected event : ExecuteTransaction
                   await expect(executeTx).to.emit(owner1ConnectedContract, "ExecuteTransaction")
 
-                  // Events emits the following
+                  // Events emit the following
                   assert.equal(txRec.events[0].args.owner, owners[0].address)
                   assert.equal(txRec.events[0].args.txIndex.toString(), "0")
               })
